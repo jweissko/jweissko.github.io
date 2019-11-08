@@ -11,7 +11,7 @@ body {
     font-size: 16px; /* Technically, this is unncessary, since by default most browsers have a font size 16px, but since this is a practice website, I am including it */
     line-height: 1.5; /* A number that will be multiplied with the current font-size to set the line height */
     margin: 0 auto; /* auto horizontally centers the current element within its container */
-    max-width: 1000px; /*  set the size of the body no larger than 800 px, so that expanding the window size will not expand body beyond 800px */
+    max-width: 850px; /*  set the size of the body no larger than 800 px, so that expanding the window size will not expand body beyond 800px */
     padding: 2em 2em 4em; /* Sets the top padding to 2 em (An "em" is a scalable unit used in web document media. 1 em is equivalent to current font size (16px), so, 2em = 32px), the left and right padding to 2 em, and the bottom padding to 4 em. */
     overflow: auto;
 }
@@ -21,9 +21,8 @@ nav {
 nav li{
     display: inline-block;
     font-size: 20px;
-    margin-right: 50px;
-    margin-left:50px;
-    border
+    margin-right: 60px;
+    margin-left: 60px;
 }
 nav a { 
     text-decoration: none;
@@ -44,8 +43,16 @@ nav a:active {
 nav a.active {
     color: black; 
 }
+nav hr {
+    width: 100%;
+}
 .heading {
-   overflow: auto; 
+    overflow: auto; 
+    width: 800px;
+
+}
+ul.me {
+    line-height: 200%;
 }
 img.profile {
     animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1; /* colorize the image over a duration of 2 seconds following a cubic-bezier transition that starts slow then speeds up, and interates over the animation only once */
@@ -69,15 +76,18 @@ img.icon {
     
 }
 img.edu {
-    margin-top: 2px;   
+    margin-top: 20px;   
 }
 img.work {
     margin-top: 20px;
 }
 img.values{
-    margin-top:20px;
+    margin-top: 20px;
 }
 img.interests {
+    margin-top: 20px;
+}
+img.metaphysical {
     margin-top: 20px;
 }
 img.email {

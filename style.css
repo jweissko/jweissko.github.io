@@ -1,137 +1,139 @@
 html {
-    background: #e6e9e9; /* Background is redundant, so that just in case you want to get rid of the background-image, below, you will still have a pleasing background */
-    background-image: linear-gradient(to left, rgb(230, 233, 233) 0%, rgb(216, 221, 221) 100%); /* This creates a linear gradient, moving left (which is 270 degrees clockwise from the 12 oclock mark) from a lighter gray to a slightly darker gray. */
-    -webkit-font-smoothing: antialiased; /* -webkit-font-smoothing only works on Mac OS X/macOS. and when set to antialiased, it smootha the font on the level of the pixel, as opposed to the subpixel, making it less jagged */   
+  background: #e6e9e9; /* Background is redundant, so that just in case you want to get rid of the background-image, below, you will still have a pleasing background */
+  background-image: linear-gradient(
+    to left,
+    rgb(230, 233, 233) 0%,
+    rgb(216, 221, 221) 100%
+  ); /* This creates a linear gradient, moving left (which is 270 degrees clockwise from the 12 oclock mark) from a lighter gray to a slightly darker gray. */
+  -webkit-font-smoothing: antialiased; /* -webkit-font-smoothing only works on Mac OS X/macOS. and when set to antialiased, it smootha the font on the level of the pixel, as opposed to the subpixel, making it less jagged */
 }
 body {
-    background: #fff; /* a white background */
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06); /* a very slight shadow behind the white background that has zero offset vertically and horizontally, with a blurr of 2px and the color black  6% opaque. To make the shadow more visible, increase the blurr px size and add a spread, for example: box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.06); */
-    color: #545454; /* Font color: dark gray */
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Hevetica Neue" is the preferred font. (It is in quotations, since it has a space, and the quotations escape the space). Following it is are three "generic families" which are other fonts that look similar, to fall back on in case Hevetica Neue is not supported by the browser. (The browser first tries rendering in the first font, and if it fails, goes to the next one, etc.) */
-    font-size: 16px; /* Technically, this is unncessary, since by default most browsers have a font size 16px, but since this is a practice website, I am including it */
-    line-height: 1.5; /* A number that will be multiplied with the current font-size to set the line height */
-    margin: 0 auto; /* auto horizontally centers the current element within its container */
-    max-width: 850px; /*  set the size of the body no larger than 800 px, so that expanding the window size will not expand body beyond 800px */
-    padding: 2em 2em 4em; /* Sets the top padding to 2 em (An "em" is a scalable unit used in web document media. 1 em is equivalent to current font size (16px), so, 2em = 32px), the left and right padding to 2 em, and the bottom padding to 4 em. */
-    overflow: auto;
+  background: #fff; /* a white background */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.06); /* a very slight shadow behind the white background that has zero offset vertically and horizontally, with a blurr of 2px and the color black  6% opaque. To make the shadow more visible, increase the blurr px size and add a spread, for example: box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.06); */
+  color: #545454; /* Font color: dark gray */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Hevetica Neue" is the preferred font. (It is in quotations, since it has a space, and the quotations escape the space). Following it is are three "generic families" which are other fonts that look similar, to fall back on in case Hevetica Neue is not supported by the browser. (The browser first tries rendering in the first font, and if it fails, goes to the next one, etc.) */
+  font-size: 16px; /* Technically, this is unncessary, since by default most browsers have a font size 16px, but since this is a practice website, I am including it */
+  line-height: 1.5; /* A number that will be multiplied with the current font-size to set the line height */
+  margin: 0 auto; /* auto horizontally centers the current element within its container */
+  max-width: 850px; /*  set the size of the body no larger than 800 px, so that expanding the window size will not expand body beyond 800px */
+  padding: 2em 2em 4em; /* Sets the top padding to 2 em (An "em" is a scalable unit used in web document media. 1 em is equivalent to current font size (16px), so, 2em = 32px), the left and right padding to 2 em, and the bottom padding to 4 em. */
+  overflow: auto;
 }
 nav {
-    text-align: left;
+  text-align: left;
 }
-nav li{
-    display: inline-block;
-    font-size: 20px;
-    margin-right: 60px;
-    margin-left: 60px;
+nav li {
+  display: inline-block;
+  font-size: 20px;
+  margin-right: 60px;
+  margin-left: 60px;
 }
-nav a { 
-    text-decoration: none;
-    font-weight: 400 
+nav a {
+  text-decoration: none;
+  font-weight: 400;
 }
-nav a:link{
-    color: hsla(300, 0%, 65%, 1);
+nav a:link {
+  color: hsla(300, 0%, 65%, 1);
 }
-nav a:visited{
-    color: hsla(300, 0%, 80%, 1);
+nav a:visited {
+  color: hsla(300, 0%, 80%, 1);
 }
 nav a:hover {
-    color: hsla(300, 0%, 50%, 1); 
+  color: hsla(300, 0%, 50%, 1);
 }
 nav a:active {
-    color: hsla(300, 0%, 35%, 1);
+  color: hsla(300, 0%, 35%, 1);
 }
 nav a.active {
-    color: black; 
+  color: black;
 }
 nav hr {
-    width: 100%;
+  width: 100%;
 }
 .heading {
-    overflow: auto; 
-    width: 800px;
-
+  overflow: auto;
+  width: 800px;
 }
 ul.me {
-    line-height: 200%;
+  line-height: 200%;
 }
 img.profile {
-    animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1; /* colorize the image over a duration of 2 seconds following a cubic-bezier transition that starts slow then speeds up, and interates over the animation only once */
-    background: transparent; /* have no background for the image */
-    border: 10px solid rgba(0, 0, 0, 0.12); /* border of the image is 10px solid and black with 12 % opacity */
-    border-radius: 4px; /* defines the radius of the circle used to round off the border corners */
-    display: inline;
-    float: right;
-    margin: 1.3em auto;
-    max-width: 35%;
+  animation: colorize 2s cubic-bezier(0, 0, 0.78, 0.36) 1; /* colorize the image over a duration of 2 seconds following a cubic-bezier transition that starts slow then speeds up, and interates over the animation only once */
+  background: transparent; /* have no background for the image */
+  border: 10px solid rgba(0, 0, 0, 0.12); /* border of the image is 10px solid and black with 12 % opacity */
+  border-radius: 4px; /* defines the radius of the circle used to round off the border corners */
+  display: inline;
+  float: right;
+  margin: 1.3em auto;
+  max-width: 35%;
 }
 img.icon {
-    border: none;
-    float: left;
-    margin-top: 2px;
-    margin-right: 10px;
-    margin-bottom:0px;
-    max-height: 2em;
-    vertical-align: bottom;
-    opacity: .75;
-    
+  border: none;
+  float: left;
+  margin-top: 2px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  max-height: 2em;
+  vertical-align: bottom;
+  opacity: 0.75;
 }
 img.edu {
-    margin-top: 20px;   
+  margin-top: 20px;
 }
 img.work {
-    margin-top: 20px;
+  margin-top: 20px;
 }
-img.values{
-    margin-top: 20px;
+img.values {
+  margin-top: 20px;
 }
 img.interests {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 img.metaphysical {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 img.email {
-    margin-top: 5px;
-    margin-right: 17px;
+  margin-top: 5px;
+  margin-right: 17px;
 }
 img.phone {
-    margin-top: 0;
-    margin-right: 16px;
+  margin-top: 0;
+  margin-right: 16px;
 }
 h1 {
-    color: #222;
-    font-weight: 600;
-    line-height: 1.3em;
+  color: #222;
+  font-weight: 600;
+  line-height: 1.3em;
 }
 h2 {
-    color: #222;
-    font-weight: 400;
+  color: #222;
+  font-weight: 400;
 }
 /*
 h2.edu:before { 
-    content: url(https://image.flaticon.com/icons/png/512/49/49944.png);
-    vertical-align: middle;
-    font-size: 0px !important;
-    margin-left: -60px;
+content: url(https://image.flaticon.com/icons/png/512/49/49944.png);
+vertical-align: middle;
+font-size: 0px !important;
+margin-left: -60px;
 }
 */
 ul {
-    list-style-type: square;
+  list-style-type: square;
 }
 h3 {
-    color: #222;
-    font-weight: 500;
-    margin-top: 2em;
-    margin-bottom: 0;
+  color: #222;
+  font-weight: 500;
+  margin-top: 2em;
+  margin-bottom: 0;
 }
 hr {
-    width: 40%;
-    margin-left:0;
-    margin-bottom: 0em
+  width: 40%;
+  margin-left: 0;
+  margin-bottom: 0em;
 }
 a {
-    color: hsla(240, 75%, 50%, .7);
-    text-decoration: none;
+  color: hsla(240, 75%, 50%, 0.7);
+  text-decoration: none;
 }
 table {
   font-family: arial, sans-serif;
@@ -139,7 +141,8 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -149,18 +152,14 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 .space {
-    dispaly: block;
-    height: 10em;
+  dispaly: block;
+  height: 10em;
 }
 footer {
-    margin-top: 60px;
-    margin-bottom: 0px;
-    text-align: center;  
+  margin-top: 60px;
+  margin-bottom: 0px;
+  text-align: center;
 }
 footer p {
-    font-size: .7em;
+  font-size: 0.7em;
 }
-
-
-
-

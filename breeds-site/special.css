@@ -3,11 +3,38 @@
   width: 36px;
   height: 36px;
   padding: 8px;
-
   background: #fff;
   border: 2px solid #666;
   color: #666;
   text-align: center;
-
   font: 32px Arial, sans-serif;
 }
+
+h3.text-white-bordered {
+  color: black;
+  -webkit-text-fill-color: white;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.b {
+  color: white;
+  -webkit-text-fill-color: black;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+
+/* .navbar {
+    position: fixed;
+    /* Set the navbar to fixed position */
+
+/* top: 0;
+    /* Position the navbar at the top of the page */
+
+/* width: 100%;
+    /* Full width */
+
+/* z-index: 1;
+} */

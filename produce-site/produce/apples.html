@@ -352,6 +352,12 @@
         let img = document
           .getElementById(productCode + "-img")
           .getAttribute("src");
+        console.log(
+          document
+            .getElementById(productCode + "-price")
+            .textContent.split(" ")[0]
+            .replace("$", "")
+        );
         let price = parseFloat(
           document
             .getElementById(productCode + "-price")

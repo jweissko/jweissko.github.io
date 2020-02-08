@@ -316,7 +316,6 @@
                   onsubmit="store('Golden Delicious'); return false;"
                 >
                   <div class="form-group">
-                    <!-- <label for="qty">Qty</label> -->
                     <select
                       class="form-control-sm"
                       id="golden-delicious-qty"
@@ -359,9 +358,8 @@
             .textContent.split(" ")[0]
             .replace("$", "")
         );
-        /* console.log(price) */ let qty_cases = document.getElementById(
-          productCode + "-qty"
-        ).value;
+        console.log(price);
+        let qty_cases = document.getElementById(productCode + "-qty").value;
         let qty = parseInt(qty_cases.split(" ")[0]);
         let ttl = parseFloat((price * qty).toFixed(2));
         let d = {
@@ -371,9 +369,7 @@
           price: price,
           ttl: ttl
         };
-        // console.log(inputEmail.value);
         localStorage.setItem(productName, JSON.stringify(d));
-        /* console.log(myval); */
         alert(
           "You have added " +
             qty_cases +

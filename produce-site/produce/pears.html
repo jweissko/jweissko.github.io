@@ -16,8 +16,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/index.css" />
-    <link rel="icon" href="/apple_red.png" />
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="icon" href="../apple_red.png" />
   </head>
 
   <body>
@@ -27,7 +27,7 @@
       id="mainNav"
     >
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="/index.html"
+        <a class="navbar-brand js-scroll-trigger" href="../index.html"
           >Everfresh Organics &trade;</a
         >
         <button
@@ -58,15 +58,15 @@
                 class="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <a class="dropdown-item" href="/produce/apples.html">Apples</a>
-                <a class="dropdown-item" href="/produce/pears.html">Pears</a>
+                <a class="dropdown-item" href="apples.html">Apples</a>
+                <a class="dropdown-item" href="pears.html">Pears</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/cart.html">Cart</a>
+              <a class="nav-link js-scroll-trigger" href="../cart.html">Cart</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/feedback.html"
+              <a class="nav-link js-scroll-trigger" href="../feedback.html"
                 >Feedback</a
               >
             </li>
@@ -80,17 +80,12 @@
         <header class="bg-white text-dark">
           <div class="container text-center heading">
             <h2>Wholesale Organic Pears</h2>
-            <!-- <p class="lead">High Quality Organic Produce Since 2020 </p> -->
           </div>
         </header>
-        <!-- <div class="heading">
-	          <h2></h2>
-			</div> -->
 
         <div class="row">
           <div class="col-md-6 col-lg-4">
             <div class="card border-0 transform-on-hover">
-              <a class="lightbox" href="img/image1.jpg">
                 <img
                   src="http://usapears.org/wp-content/uploads/2015/01/green-anjou-pear.jpg"
                   alt="Green Anjou"
@@ -148,10 +143,8 @@
 
                 <form
                   class="form-inline justify-content-center"
-                  onsubmit="store('Red Bartlett'); return false;"
-                >
+                  onsubmit="store('Red Bartlett'); return false;">
                   <div class="form-group">
-                    <!-- <label for="qty">Qty</label> -->
                     <select
                       class="form-control-sm"
                       id="red-bartlett-qty"
@@ -247,9 +240,7 @@
           price: price,
           ttl: ttl
         };
-        // console.log(inputEmail.value);
         localStorage.setItem(productName, JSON.stringify(d));
-        /* console.log(myval); */
         alert(
           "You have added " +
             qty_cases +

@@ -232,7 +232,8 @@
         let price = parseFloat(
           document
             .getElementById(productCode + "-price")
-            .textContent.split(" ")[0]
+            .textContent.trim()
+            .split(" ")[0]
             .replace("$", "")
         );
 

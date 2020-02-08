@@ -58,8 +58,10 @@
                 class="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <a class="dropdown-item" href="apples.html">Apples</a>
-                <a class="dropdown-item" href="pears.html">Pears</a>
+                <a class="dropdown-item" href="../produce/apples.html"
+                  >Apples</a
+                >
+                <a class="dropdown-item" href="../produce/pears.html">Pears</a>
               </div>
             </li>
             <li class="nav-item">
@@ -80,18 +82,24 @@
         <header class="bg-white text-dark">
           <div class="container text-center heading">
             <h2>Wholesale Organic Pears</h2>
+            <!-- <p class="lead">High Quality Organic Produce Since 2020 </p> -->
           </div>
         </header>
+        <!-- <div class="heading">
+	          <h2></h2>
+			</div> -->
 
         <div class="row">
           <div class="col-md-6 col-lg-4">
             <div class="card border-0 transform-on-hover">
-              <img
-                src="http://usapears.org/wp-content/uploads/2015/01/green-anjou-pear.jpg"
-                alt="Green Anjou"
-                class="card-img-top"
-                id="green-anjou-img"
-              />
+              <a class="lightbox" href="img/image1.jpg">
+                <img
+                  src="http://usapears.org/wp-content/uploads/2015/01/green-anjou-pear.jpg"
+                  alt="Green Anjou"
+                  class="card-img-top"
+                  id="green-anjou-img"
+                />
+              </a>
               <div class="card-body">
                 <h6><a href="#">Green Anjou</a></h6>
                 <p class="text-muted card-text" id="green-anjou-price">
@@ -103,7 +111,6 @@
                   onsubmit="store('Green Anjou'); return false;"
                 >
                   <div class="form-group">
-                    <!-- <label for="qty">Qty</label> -->
                     <select
                       class="form-control-sm"
                       id="green-anjou-qty"
@@ -228,9 +235,8 @@
             .textContent.split(" ")[0]
             .replace("$", "")
         );
-        /* console.log(price) */ let qty_cases = document.getElementById(
-          productCode + "-qty"
-        ).value;
+
+        let qty_cases = document.getElementById(productCode + "-qty").value;
         let qty = parseInt(qty_cases.split(" ")[0]);
         let ttl = parseFloat((price * qty).toFixed(2));
         let d = {
@@ -240,7 +246,9 @@
           price: price,
           ttl: ttl
         };
+
         localStorage.setItem(productName, JSON.stringify(d));
+
         alert(
           "You have added " +
             qty_cases +

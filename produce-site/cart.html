@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Everfresh Organics</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="/apple_red.png" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+      id="mainNav"
+    >
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/index.html"
+          >Everfresh Organics &trade;</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Produce
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <a class="dropdown-item" href="/produce/apples.html">Apples</a>
+                <a class="dropdown-item" href="/produce/pears.html">Pears</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/feedback.html"
+                >Feedback</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="gallery-block cards-gallery" role="main">
+      <div class="container">
+        <header class="bg-white text-dark">
+          <div class="container text-center heading">
+            <h2>Shopping Cart</h2>
+          </div>
+        </header>
+
+        <table class="table" id="cart">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Image</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
+      integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(() => {
+        loadRows();
+      });
+
+      function loadRows() {
+        let tbody = document.getElementsByTagName("tbody")[0];
+        let total = 0;
+        for (let i = 0; i < localStorage.length; i++) {
+          let item_data = JSON.parse(localStorage.getItem(localStorage.key(i)));
+
+          let row = tbody.insertRow(-1);
+
+          let num = row.insertCell(0);
+          let name = row.insertCell(1);
+          let img_td = row.insertCell(2);
+          let qty = row.insertCell(3);
+          let price = row.insertCell(4);
+          let action = row.insertCell(5);
+
+          num.innerHTML = i + 1;
+          name.innerHTML = item_data.name;
+
+          let img = document.createElement("img");
+          img.src = item_data.img;
+          img.alt = item_data.name;
+          img.title = item_data.name;
+          img_td.appendChild(img);
+
+          qty.innerHTML = item_data.qty;
+          price.innerHTML = "$" + item_data.ttl;
+
+          total += parseFloat(item_data.ttl);
+
+          let icon = document.createElement("i");
+          icon.classList.add("fas");
+          icon.classList.add("fa-trash");
+          icon.title = "Delete";
+          icon.alt = "Delete item";
+          $(action).click(function() {
+            key = $(this)
+              .parents("tr")
+              .first()
+              .children("td")
+              .eq(1)
+              .text();
+            localStorage.removeItem(key);
+            $(this)
+              .parents("tr")
+              .first()
+              .remove();
+            total -= $(this)
+              .parents("tr")
+              .first()
+              .children("td")
+              .eq(4)
+              .text()
+              .replace("$", "");
+            let footer = $("tbody tr").get(-1);
+            footer.remove();
+            loadFooter(total);
+          });
+          action.appendChild(icon);
+        }
+        loadFooter(total);
+      }
+
+      function loadFooter(total) {
+        num_rows = $("tbody tr").length;
+        if (num_rows > 0) {
+          let tbody = document.getElementsByTagName("tbody")[0];
+          let row = tbody.insertRow(-1);
+
+          let num = row.insertCell(0);
+          let name = row.insertCell(1);
+          let img_td = row.insertCell(2);
+          let qty = row.insertCell(3);
+          let price = row.insertCell(4);
+          let action = row.insertCell(5);
+
+          num.innerHTML = "&#10036;";
+          name.innerHTML = "Total";
+          img_td = null;
+
+          qty.innerHTML = null;
+          total = parseFloat(total.toFixed(2));
+          price.innerHTML = "$" + total;
+
+          let icon = document.createElement("i");
+          icon.classList.add("fas");
+          icon.classList.add("fa-arrow-right");
+          icon.title = "Checkout";
+          icon.alt = "Go to checkout";
+          $(action).click(function() {
+            for (let i = $("tbody tr").length - 1; i > -1; i--) {
+              $("tbody tr")
+                .get(i)
+                .remove();
+            }
+            localStorage.clear();
+            alert(
+              "Oops, we are sorry!\n Your online order could not be processed.\n Our payment system is currently under construction."
+            );
+          });
+          action.appendChild(icon);
+        }
+      }
+    </script>
+  </body>
+</html>

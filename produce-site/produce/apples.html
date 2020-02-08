@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Everfresh Organics</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="icon" href="/apple_red.png" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+      id="mainNav"
+    >
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/index.html"
+          >Everfresh Organics &trade;</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Produce
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <a class="dropdown-item" href="/produce/apples.html">Apples</a>
+                <a class="dropdown-item" href="/produce/pears.html">Pears</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/feedback.html"
+                >Feedback</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="gallery-block cards-gallery" role="main">
+      <div class="container">
+        <header class="bg-white text-dark">
+          <div class="container text-center heading">
+            <h2>Wholesale Organic Apples</h2>
+            <!-- <p class="lead">High Quality Organic Produce Since 2020 </p> -->
+          </div>
+        </header>
+        <!-- <div class="heading">
+	          <h2></h2>
+			</div> -->
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="card border-0 transform-on-hover">
+              <img
+                src="https://bestapples.com/wp-content/uploads/2015/10/red-delicious.jpg"
+                alt="Red Delicious"
+                class="card-img-top"
+                id="red-delicious-img"
+              />
+
+              <div class="card-body">
+                <h6><a href="#">Red Delicious</a></h6>
+                <p class="text-muted card-text" id="red-delicious-price">
+                  $49.95 for 50 lb. case
+                </p>
+
+                <form
+                  class="form-inline justify-content-center"
+                  onsubmit="store('Red Delicious'); return false;"
+                >
+                  <div class="form-group">
+                    <select
+                      class="form-control-sm"
+                      id="red-delicious-qty"
+                      title="Choose quantity"
+                    >
+                      <option>1 case</option>
+                      <option>2 cases</option>
+                      <option>3 cases</option>
+                      <option>4 cases</option>
+                      <option>5 cases</option>
+                      <option>6 cases</option>
+                      <option>7 cases</option>
+                      <option>8 cases</option>
+                      <option>9 cases</option>
+                      <option>10 cases</option>
+                    </select>
+                    <input type="submit" value="Add to cart" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card border-0 transform-on-hover">
+              <img
+                src="https://bestapples.com/wp-content/uploads/2015/10/gala.jpg"
+                alt="Gala"
+                class="card-img-top"
+                id="gala-img"
+              />
+              <div class="card-body">
+                <h6><a href="#">Gala</a></h6>
+                <p class="text-muted card-text" id="gala-price">
+                  $64.95 for 50 lb. case
+                </p>
+
+                <form
+                  class="form-inline justify-content-center"
+                  onsubmit="store('Gala'); return false;"
+                >
+                  <div class="form-group">
+                    <!-- <label for="qty">Qty</label> -->
+                    <select
+                      class="form-control-sm"
+                      id="gala-qty"
+                      title="Choose quantity"
+                    >
+                      <option>1 case</option>
+                      <option>2 cases</option>
+                      <option>3 cases</option>
+                      <option>4 cases</option>
+                      <option>5 cases</option>
+                      <option>6 cases</option>
+                      <option>7 cases</option>
+                      <option>8 cases</option>
+                      <option>9 cases</option>
+                      <option>10 cases</option>
+                    </select>
+                    <input type="submit" value="Add to cart" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card border-0 transform-on-hover">
+              <img
+                src="https://bestapples.com/wp-content/uploads/2015/10/fuji.jpg"
+                alt="Fuji"
+                class="card-img-top"
+                id="fuji-img"
+              />
+              <div class="card-body">
+                <h6><a href="#">Fuji</a></h6>
+                <p class="text-muted card-text" id="fuji-price">
+                  $59.95 for 50 lb. case
+                </p>
+
+                <form
+                  class="form-inline justify-content-center"
+                  onsubmit="store('Fuji'); return false;"
+                >
+                  <div class="form-group">
+                    <!-- <label for="qty">Qty</label> -->
+                    <select
+                      class="form-control-sm"
+                      id="fuji-qty"
+                      title="Choose quantity"
+                    >
+                      <option>1 case</option>
+                      <option>2 cases</option>
+                      <option>3 cases</option>
+                      <option>4 cases</option>
+                      <option>5 cases</option>
+                      <option>6 cases</option>
+                      <option>7 cases</option>
+                      <option>8 cases</option>
+                      <option>9 cases</option>
+                      <option>10 cases</option>
+                    </select>
+                    <input type="submit" value="Add to cart" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card border-0 transform-on-hover">
+              <img
+                src="https://bestapples.com/wp-content/uploads/2015/10/granny.jpg"
+                alt="Granny Smith"
+                class="card-img-top"
+                id="granny-img"
+              />
+              <div class="card-body">
+                <h6><a href="#">Granny Smith</a></h6>
+                <p class="text-muted card-text" id="granny-price">
+                  $49.95 for 50 lb. case
+                </p>
+                <form
+                  class="form-inline justify-content-center"
+                  onsubmit="store('Granny'); return false;"
+                >
+                  <div class="form-group">
+                    <!-- <label for="qty">Qty</label> -->
+                    <select
+                      class="form-control-sm"
+                      id="granny-qty"
+                      title="Choose quantity"
+                    >
+                      <option>1 case</option>
+                      <option>2 cases</option>
+                      <option>3 cases</option>
+                      <option>4 cases</option>
+                      <option>5 cases</option>
+                      <option>6 cases</option>
+                      <option>7 cases</option>
+                      <option>8 cases</option>
+                      <option>9 cases</option>
+                      <option>10 cases</option>
+                    </select>
+                    <input type="submit" value="Add to cart" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card border-0 transform-on-hover">
+              <img
+                src="https://bestapples.com/wp-content/uploads/2015/10/honeycrisp.jpg"
+                alt="Honey Crisp"
+                class="card-img-top"
+                id="honey-crisp-img"
+              />
+
+              <div class="card-body">
+                <h6><a href="#">Honey Crisp</a></h6>
+                <p class="text-muted card-text" id="honey-crisp-price">
+                  $54.95 for 50 lb. case
+                </p>
+                <form
+                  class="form-inline justify-content-center"
+                  onsubmit="store('Honey Crisp'); return false;"
+                >
+                  <div class="form-group">
+                    <!-- <label for="qty">Qty</label> -->
+                    <select
+                      class="form-control-sm"
+                      id="honey-crisp-qty"
+                      title="Choose quantity"
+                    >
+                      <option>1 case</option>
+                      <option>2 cases</option>
+                      <option>3 cases</option>
+                      <option>4 cases</option>
+                      <option>5 cases</option>
+                      <option>6 cases</option>
+                      <option>7 cases</option>
+                      <option>8 cases</option>
+                      <option>9 cases</option>
+                      <option>10 cases</option>
+                    </select>
+                    <input type="submit" value="Add to cart" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card border-0 transform-on-hover">
+              <img
+                src="https://bestapples.com/wp-content/uploads/2015/10/golden.jpg"
+                alt="Golden Delicious"
+                class="card-img-top"
+                id="golden-delicious-img"
+              />
+
+              <div class="card-body">
+                <h6><a href="#">Golden Delicious</a></h6>
+                <p class="text-muted card-text" id="golden-delicious-price">
+                  $64.95 for 50 lb. case
+                </p>
+                <form
+                  class="form-inline justify-content-center"
+                  onsubmit="store('Golden Delicious'); return false;"
+                >
+                  <div class="form-group">
+                    <!-- <label for="qty">Qty</label> -->
+                    <select
+                      class="form-control-sm"
+                      id="golden-delicious-qty"
+                      title="Choose quantity"
+                    >
+                      <option>1 case</option>
+                      <option>2 cases</option>
+                      <option>3 cases</option>
+                      <option>4 cases</option>
+                      <option>5 cases</option>
+                      <option>6 cases</option>
+                      <option>7 cases</option>
+                      <option>8 cases</option>
+                      <option>9 cases</option>
+                      <option>10 cases</option>
+                    </select>
+                    <input type="submit" value="Add to cart" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script>
+      baguetteBox.run(".cards-gallery", { animation: "slideIn" });
+    </script>
+    <script>
+      function store(productName) {
+        let name = productName;
+        let productCode = productName.replace(" ", "-").toLowerCase();
+        let img = document
+          .getElementById(productCode + "-img")
+          .getAttribute("src");
+        let price = parseFloat(
+          document
+            .getElementById(productCode + "-price")
+            .textContent.split(" ")[0]
+            .replace("$", "")
+        );
+        /* console.log(price) */ let qty_cases = document.getElementById(
+          productCode + "-qty"
+        ).value;
+        let qty = parseInt(qty_cases.split(" ")[0]);
+        let ttl = parseFloat((price * qty).toFixed(2));
+        let d = {
+          name: name,
+          img: img,
+          qty: qty,
+          price: price,
+          ttl: ttl
+        };
+        // console.log(inputEmail.value);
+        localStorage.setItem(productName, JSON.stringify(d));
+        /* console.log(myval); */
+        alert(
+          "You have added " +
+            qty_cases +
+            " of " +
+            productName +
+            " to your shopping cart. \n If this was an accident, this item can be removed on the Cart page."
+        );
+      }
+    </script>
+  </body>
+</html>
